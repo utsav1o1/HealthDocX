@@ -1,0 +1,21 @@
+{
+  "name": "healthdocx",
+  "version": "1.0.0",
+  "description": "Organize the health report card and suggest some info about the card and issues in your body, which is mention in the report in simpal way",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Utsav Karki",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.5"
+  }
+}

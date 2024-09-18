@@ -1,0 +1,99 @@
+/* Apply a full-screen background image */
+body {
+    background-image: url('../images/background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    
+  }
+ /* Ensure that content doesn't affect the background */
+ header, footer, main {
+    background: transparent; /* Make sure these sections are transparent */
+    
+   
+  }
+  
+  /* Flex-grow for main content to fill space between header and footer */
+  main {
+    flex-grow: 1;
+  }
+  
+  /* Footer styles to ensure it stays at the bottom */
+  footer {
+    background-color: transparent;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Footer content alignment */
+  footer .left-footer {
+    text-align: left;
+  }
+  
+  footer .right-footer {
+    text-align: right;
+  }
+  
+  /* Footer link styling */
+  footer a {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 15px;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive footer adjustments */
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+    }
+    
+    footer .left-footer, footer .right-footer {
+      text-align: center;
+      margin: 5px 0;
+    }
+  }
+  
+
+
+  /* Other content styles for readability */
+h1, p, a {
+    color: #000000;
+  }
+  
+  button, a.btn {
+    background-color: rgba(255, 165, 0, 0.8);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+  }
+  
+  .illustration {
+    position: relative;
+    animation: fadeInUp 1.2s ease-in-out;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+ 
