@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <h2>Welcome, <%= user.username %>!</h2> <!-- Assuming you have user object with username -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Your Medical Documents</div>
+                <div class="card-body">
+                    <p>You can upload your medical documents here.</p>
+                    <a href="/upload" class="btn btn-primary">Upload Document</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Health Insights</div>
+                <div class="card-body">
+                    <p>Get health insights based on your records.</p>
+                    <a href="/insights" class="btn btn-primary">View Insights</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">Profile Settings</div>
+                <div class="card-body">
+                    <p>Manage your profile and settings.</p>
+                    <a href="/settings" class="btn btn-primary">Go to Settings</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-header">View Documents By</div>
+                <div class="card-body text-center">
+                    <a href="/documents/hospitals" class="btn btn-primary btn-lg">Hospitals</a>
+                    <a href="/documents/issues" class="btn btn-secondary btn-lg">Health Issues</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

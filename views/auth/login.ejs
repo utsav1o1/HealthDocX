@@ -1,0 +1,35 @@
+<main class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow animate__animated animate__fadeInUp">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Login to Your Account</h2>
+
+                    <% if (error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    <% } %>
+
+                    <form action="/login" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <p class="text-center">Don't have an account? <a href="/auth/sign_up">Sign up here</a></p>
+                    <p class="text-center"><a href="/forgot-password">Forgot Password?</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
