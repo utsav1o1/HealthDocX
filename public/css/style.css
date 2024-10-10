@@ -13,6 +13,16 @@ body {
 
 }
 
+.navbar-nav .nav-link {
+  color:#333 !important;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #fff !important;
+}
 /* Ensure that content doesn't affect the background */
 header,
 footer,

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h2>Your Documents by Hospital</h2>
+    <% if (documentsByHospital.length === 0) { %>
+        <p>No documents categorized by hospitals.</p>
+    <% } else { %>
+        <% documentsByHospital.forEach(hospital => { %>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h5><%= hospital.name %></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% hospital.documents.forEach(doc => { %>
+                        <li class="list-group-item">
+                            <strong>Issue:</strong> <%= doc.healthIssue %>
+                            <br>
+                            <strong>Summary:</strong> <%= doc.summary %>
+                            <br>
+                            <a href="<%= doc.documentPath %>" target="_blank">View Document</a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </div>
+        <% }) %>
+    <% } %>
+</div>

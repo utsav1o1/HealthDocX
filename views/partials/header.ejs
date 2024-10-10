@@ -6,24 +6,34 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Home</a>
+          <li class="nav-item <%= title === 'Home' ? 'active' : '' %>">
+            <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= title === 'News' ? 'active' : '' %>">
             <a class="nav-link" href="#">News</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= title === 'Info' ? 'active' : '' %>">
             <a class="nav-link" href="#">Info</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <%= title === 'About_Us' ? 'active' : '' %>">
             <a class="nav-link" href="#">About us</a>
           </li>
-          <li class=" nav-item">
+          <% if (!user) { %>
+          <li class=" nav-item <%= title === 'Login' ? 'active' : '' %>"">
             <a class="nav-link" href="/auth/login">Login</a>
           </li>
-          <li class=" nav-item">
+          <li class=" nav-item <%= title === 'Sign Up' ? 'active' : '' %>">
             <a class="nav-link" href="/auth/sign_up">Sign Up</a>
           </li>
+          <% } else { %>
+            <li class="nav-item <%= title === 'Dashboard' ? 'active' : '' %>">
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="auth/logout">Logout</a>
+            </li>
+          <% } %>
+
         </ul>
       </div>
     </div>

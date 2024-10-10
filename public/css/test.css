@@ -1,0 +1,143 @@
+/* public/css/style.css */
+
+/* Color Palette */
+:root {
+    --primary-color: #f6d809;
+    --secondary-color: #a4dad2;
+    --tertiary-color: #93c572;
+    --quaternary-color: #bce08a;
+    --quinary-color: #569099;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--secondary-color);
+    color: var(--quinary-color);
+}
+
+/* Header Styling */
+.header-section {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 1.1rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #333 !important;
+}
+
+/* Logo */
+.logo {
+    max-width: 150px;
+    margin-right: 10px;
+}
+
+/* Footer Styling */
+.footer-section {
+    background-color: var(--quinary-color);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Card Styling */
+.card-header {
+    background-color: var(--quaternary-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: var(--tertiary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--quaternary-color);
+}
+
+.btn-secondary {
+    background-color: var(--quinary-color);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--tertiary-color);
+}
+
+.btn-info {
+    background-color: var(--tertiary-color);
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: var(--primary-color);
+}
+
+.btn-warning {
+    background-color: var(--quaternary-color);
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: var(--tertiary-color);
+}
+
+.btn-success {
+    background-color: var(--tertiary-color);
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: var(--quaternary-color);
+}
+
+/* Ensure footer stays at the bottom */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Image Styling */
+img.img-fluid {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Animate.css Integration */
+.animate__animated.animate__fadeIn {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

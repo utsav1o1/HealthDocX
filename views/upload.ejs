@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <h2>Upload Document</h2>
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="document">Upload File (Images and PDFs only)</label>
+            <input type="file" name="document" id="document" class="form-control-file" accept=".jpg,.jpeg,.png,.pdf" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>

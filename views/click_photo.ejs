@@ -1,0 +1,21 @@
+<div class="container mt-4">
+    <h2>Capture Photo</h2>
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+    <form action="/click_photo" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="hospitalName">Hospital Name</label>
+            <input type="text" name="hospitalName" id="hospitalName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="healthIssue">Health Issue</label>
+            <input type="text" name="healthIssue" id="healthIssue" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="photo">Capture Photo</label>
+            <input type="file" name="photo" id="photo" class="form-control-file" accept="image/*" capture="environment" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Photo</button>
+    </form>
+</div>

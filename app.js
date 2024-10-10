@@ -4,12 +4,15 @@ const expressLayouts = require('express-ejs-layouts')
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const connectDB = require('./src/config/db');
+const helmet = require('helmet');
+const path = require('path');
 
 const app = express()
+app.use(helmet());
 
 //connect database healthdocx
 connectDB();
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('public'))
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
@@ -36,22 +39,29 @@ app.use(session({
         secure: false, 
     }
 }));
+app.use((req, res, next) => {
+    res.locals.user = req.session.user;
+    next();
+});
 
 
-
-
-
-const staticRouter = require('./src/routes/static');
-const authRoutes = require('./src/routes/auth');
-app.use('/', staticRouter);
-app.use('/auth', authRoutes);
 
 const isAuthenticated = (req, res, next) => {
     if (req.session.user) {
         return next();
     }
-    res.redirect('/login');
+    res.redirect('auth/login');
 };
+
+const staticRouter = require('./src/routes/static');
+const authRoutes = require('./src/routes/auth');
+const documentRoutes = require('./src/routes/document');
+app.use('/', staticRouter);
+app.use('/auth', authRoutes);
+app.use('/upload',isAuthenticated, documentRoutes);
+
+
+
 
 app.get('/dashboard', isAuthenticated, (req, res) => {
     const userName = req.session.user.name;
