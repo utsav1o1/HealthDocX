@@ -56,9 +56,11 @@ const isAuthenticated = (req, res, next) => {
 const staticRouter = require('./src/routes/static');
 const authRoutes = require('./src/routes/auth');
 const documentRoutes = require('./src/routes/document');
+const showRoutes = require('./src/routes/show');
 app.use('/', staticRouter);
 app.use('/auth', authRoutes);
 app.use('/upload',isAuthenticated, documentRoutes);
+app.use('/documents',isAuthenticated, showRoutes);
 
 
 

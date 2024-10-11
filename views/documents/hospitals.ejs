@@ -1,21 +1,41 @@
+
 <div class="container mt-4">
-    <h2>Your Documents by Hospital</h2>
-    <% if (documentsByHospital.length === 0) { %>
-        <p>No documents categorized by hospitals.</p>
+    <h2>Documents by Hospitals</h2>
+
+    <% if (totalFilesUploaded) { %>
+        <div class="alert alert-success">Total Files Uploaded = <%= totalFilesUploaded %></div>
+    <% } %>
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <% if (hospitals.length === 0) { %>
+        <p>No documents uploaded yet.</p>
     <% } else { %>
-        <% documentsByHospital.forEach(hospital => { %>
-            <div class="card mb-3">
+        <% hospitals.forEach(hospital => { %>
+            <div class="card mb-4">
                 <div class="card-header">
-                    <h5><%= hospital.name %></h5>
+                    <h4><%= hospital.name %></h4>
                 </div>
                 <ul class="list-group list-group-flush">
                     <% hospital.documents.forEach(doc => { %>
                         <li class="list-group-item">
-                            <strong>Issue:</strong> <%= doc.healthIssue %>
-                            <br>
-                            <strong>Summary:</strong> <%= doc.summary %>
-                            <br>
-                            <a href="<%= doc.documentPath %>" target="_blank">View Document</a>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <% if (doc.documentType === 'Image') { %>
+                                        <img src="<%= doc.documentPath %>" alt="Document Image" class="img-thumbnail" style="max-width: 100px;">
+                                    <% } else { %>
+                                        <img src="https://via.placeholder.com/100x100?text=PDF" alt="PDF Document" class="img-thumbnail">
+                                    <% } %>
+                                </div>
+                                <div class="col-md-7">
+                                    <p><strong>Health Issue:</strong> <%= doc.healthIssue %></p>
+                                    <p><strong>Summary:</strong> <%= doc.summary %></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="<%= doc.documentPath %>" target="_blank" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
                         </li>
                     <% }) %>
                 </ul>
