@@ -9,8 +9,8 @@ const path = require('path');
 
 const app = express()
 app.use(helmet());
+app.set('trust proxy', 1); 
 
-//connect database healthdocx
 connectDB();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('public'))
@@ -18,6 +18,9 @@ app.use(expressLayouts)
 app.set('view engine', 'ejs')
 app.set('layout', 'layouts/main')
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('src', path.join(__dirname, 'src'));
+app.set('public', path.join(__dirname, 'public'));
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -36,7 +39,7 @@ app.use(session({
     cookie: {
         maxAge: 1000 * 60 * 60 * 24, // 1 day
         httpOnly: true, 
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
     }
 }));
 app.use((req, res, next) => {
