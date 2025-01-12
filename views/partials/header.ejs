@@ -1,41 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/" style="font-weight: bolder; font-size:xx-large">HealthDocX</a>
+<nav class="navbar navbar-expand-lg fixed-top dock-navbar">
+  <div class="container-fluid justify-content-center">
+      <a class="navbar-brand fw-bold text-dark" href="/" style="font-size: 1.5rem;">HealthDocX</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item <%= title === 'Home' ? 'active' : '' %>">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item <%= title === 'News' ? 'active' : '' %>">
-            <a class="nav-link" href="#">News</a>
-          </li>
-          <li class="nav-item <%= title === 'Info' ? 'active' : '' %>">
-            <a class="nav-link" href="#">Info</a>
-          </li>
-          <li class="nav-item <%= title === 'About_Us' ? 'active' : '' %>">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-          <% if (!user) { %>
-          <li class=" nav-item <%= title === 'Login' ? 'active' : '' %>"">
-            <a class="nav-link" href="/auth/login">Login</a>
-          </li>
-          <li class=" nav-item <%= title === 'Sign Up' ? 'active' : '' %>">
-            <a class="nav-link" href="/auth/sign_up">Sign Up</a>
-          </li>
-          <% } else { %>
-            <li class="nav-item <%= title === 'Dashboard' ? 'active' : '' %>">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="auth/logout">Logout</a>
-            </li>
-          <% } %>
-
-        </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link text-dark <%= title === 'Home' ? 'active' : '' %>" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark <%= title === 'Features' ? 'active' : '' %>" href="#features">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link text-dark <%= title === 'About Us' ? 'active' : '' %>" href="#about">About Us</a>
+              </li>
+              <% if (!user) { %>
+                  <li class="nav-item">
+                      <a class="nav-link text-dark <%= title === 'Login' ? 'active' : '' %>" href="/auth/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-dark <%= title === 'Sign Up' ? 'active' : '' %>" href="/auth/sign_up">Sign Up</a>
+                  </li>
+              <% } else { %>
+                  <li class="nav-item">
+                      <a class="nav-link text-dark <%= title === 'Dashboard' ? 'active' : '' %>" href="/dashboard">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-dark" href="/auth/logout">Logout</a>
+                  </li>
+              <% } %>
+          </ul>
       </div>
-    </div>
-  </nav>
-  
+  </div>
+</nav>
