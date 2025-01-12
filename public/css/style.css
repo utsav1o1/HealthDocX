@@ -1,101 +1,179 @@
-/* Apply a full-screen background image */
 body {
   background-image: url('../images/background.png');
-  /* Replace with your image path */
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  max-height: 100vh;
 
+}
+main {
+  flex-grow: 1; 
+}
+
+/* Navbar styling */
+.dock-navbar {
+  background: linear-gradient(90deg, #ffffff, #97F8E4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  width: 75%;
+  margin: 1rem auto;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.dock-navbar .container-fluid {
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  color: #333 !important;
+  font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-  color:#333 !important;
-  font-size: 1.1rem;
-  margin-right: 15px;
-  transition: color 0.3s;
+  margin: 0 10px;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #fff !important;
-}
-/* Ensure that content doesn't affect the background */
-header,
-footer,
-main {
-  background: transparent;
-  /* Make sure these sections are transparent */
-
-
+  color: #97F8E4;
 }
 
-/* Flex-grow for main content to fill space between header and footer */
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #f6d809;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+.justify-content-end{
+  justify-content: flex-end ;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23333' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(51, 51, 51, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+  .dock-navbar {
+    width: 90%;
+  }
+
+  .dock-navbar .navbar-collapse {
+    background: linear-gradient(90deg, #ffffff, #97F8E4);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  .dock-navbar .nav-link {
+    display: block;
+        margin: 0.5rem 0;
+  }
+}
+/* Footer Styling */
+.footer {
+  position: fixed;
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 75%; 
+  background: linear-gradient(90deg, #fff, #68071b); 
+  color: #333;
+  font-size: 0.9rem;
+  border-top: 3px solid #68071b;
+  padding: 1rem 0.5rem;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+  border-radius: 50px; 
+  text-align: center;
+}
+
+
+/* Contributor Section */
+.contributors {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contributor-photo {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.footer .list-inline-item a {
+  color: rgb(0, 170, 255);
+  font-size:large;
+  margin: 0 5px;
+ 
+  transition: color 0.3s ease-in-out;
+}
+
+
+.footer .list-inline-item a:hover {
+  color: #0993f6; 
+  font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contributors {
+      justify-content: center;
+  }
+
+  .list-inline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+}
+
 main {
   flex-grow: 1;
 }
 
 .card {
-  border: none;
-  transition: transform 0.2s;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styles to ensure it stays at the bottom */
-footer {
-  background-color: transparent;
-  color: #000000;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  
-}
-
-/* Footer content alignment */
-footer .left-footer {
-  text-align: left;
-}
-
-footer .right-footer {
-  text-align: right;
-}
-
-/* Footer link styling */
-footer a {
-  color: #000000;
-  text-decoration: none;
-  margin-left: 15px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive footer adjustments */
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem;
   }
 
-  footer .left-footer,
-  footer .right-footer {
-    text-align: center;
-    margin: 5px 0;
+  p {
+    font-size: 1rem;
+  }
+
+  button,
+  a.btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 }
 
-
-
-/* Other content styles for readability */
 h1,
 p,
 a {
@@ -104,11 +182,21 @@ a {
 
 button,
 a.btn {
-  background-color: rgba(255, 165, 0, 0.8);
+  background-color: #68071b;
+  /* Bootstrap Primary Color */
   border: none;
   padding: 10px 20px;
   color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+button:hover,
+a.btn:hover {
+  background-color: #cf5c73;
+  color: #fff;
+}
+
 
 .illustration {
   position: relative;
