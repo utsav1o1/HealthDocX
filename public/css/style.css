@@ -1,5 +1,6 @@
 body {
   background-image: url('../images/background.png');
+  zoom: 80%;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
