@@ -1,23 +1,92 @@
+:root {
+  --primary-color: #38B2AC;
+  --secondary-color: #81E6D9;
+  --accent-color: #4299E1;
+  --background-color: #E6FFFA;
+  --text-color:#2D3748;
+  --dark-color: #333;
+  --light-color: #fff;
+}
 body {
   background-image: url('../images/background.png');
   zoom: 80%;
   background-size: cover;
   background-repeat: no-repeat;
+  scrollbar-width: none; 
+  background: linear-gradient(90deg, var(--light-color), var(--primary-color));
   margin: 0;
   padding: 0;
   display: flex;
+  zoom: 80%;
   flex-direction: column;
   font-family: 'Roboto', sans-serif;
-  max-height: 100vh;
 
 }
 main {
   flex-grow: 1; 
 }
 
+.custom-bg-primary {
+  background-color: var(--primary-color);
+}
+
+.custom-bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.custom-text {
+  color: var(--text-color);
+}
+
+.team-member-card {
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(145deg, var(--light-color), var(--background-color));
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px);
+}
+
+.mission-section {
+  background:  var(--background-color);
+  color: var(--dark-color);
+}
+.mission-card{
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.mission-card h3{
+  color: var(--light-color);
+}
+.mission-card p{
+  color: var(--light-color);
+}
+
+.card-img-top{
+  mix-blend-mode:darken;
+}
+
+.stats-counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.floating-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
 /* Navbar styling */
 .dock-navbar {
-  background: linear-gradient(90deg, #ffffff, #97F8E4);
+  background: linear-gradient(90deg, var(--light-color), var(--secondary-color));
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   padding: 0.5rem 1rem;
@@ -32,25 +101,27 @@ main {
   justify-content: space-between;
 }
 
+
+
 .navbar-brand {
-  color: #333 !important;
+  color: var(--dark-color);
   font-weight: bold;
 }
 
 .navbar-nav .nav-link {
   margin: 0 10px;
-  color: #333;
+  color: var(--text-color);
   font-size: 1rem;
   transition: color 0.3s ease-in-out;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #97F8E4;
+  color: var(--accent-color);
 }
 
 .navbar-nav .nav-link.active {
   font-weight: bold;
-  color: #f6d809;
+  color: var(--accent-color);
 }
 
 .navbar-toggler {
@@ -71,7 +142,7 @@ main {
   }
 
   .dock-navbar .navbar-collapse {
-    background: linear-gradient(90deg, #ffffff, #97F8E4);
+    background: linear-gradient(90deg, var(--light-color), var(--secondary-color));
     border-radius: 10px;
     padding: 1rem;
   }
@@ -88,10 +159,10 @@ main {
   left: 50%; 
   transform: translateX(-50%); 
   width: 75%; 
-  background: linear-gradient(90deg, #fff, #68071b); 
-  color: #333;
+  background: linear-gradient(90deg, var(--light-color), var(--secondary-color)); 
+  color: var(--dark-color);
   font-size: 0.9rem;
-  border-top: 3px solid #68071b;
+  border-top: 3px solid var(--secondary-color);
   padding: 1rem 0.5rem;
   z-index: 1000;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
@@ -117,16 +188,15 @@ main {
 
 
 .footer .list-inline-item a {
-  color: rgb(0, 170, 255);
+  color: var(--dark-color);
   font-size:large;
   margin: 0 5px;
- 
   transition: color 0.3s ease-in-out;
 }
 
 
 .footer .list-inline-item a:hover {
-  color: #0993f6; 
+  color: var(--accent-color); 
   font-weight: bold;
 }
 
@@ -149,6 +219,7 @@ main {
 
 .card {
   border: 1px solid #ddd;
+  background-color: var(--background-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
@@ -183,7 +254,7 @@ a {
 
 button,
 a.btn {
-  background-color: #68071b;
+  background-color: var(--primary-color);
   /* Bootstrap Primary Color */
   border: none;
   padding: 10px 20px;
@@ -194,9 +265,23 @@ a.btn {
 
 button:hover,
 a.btn:hover {
-  background-color: #cf5c73;
+  background-color: var(--accent-color);
   color: #fff;
 }
+
+/* form */
+.form-control {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+}
+.form-button{
+  background-color: var(--primary-color);
+  
+  color: var(--light-color);
+  border-radius: 5px;
+  box-shadow: 0 5px 5px rgba(68, 65, 65, 0.427);
+}
+
 
 
 .illustration {

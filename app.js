@@ -9,7 +9,7 @@ const path = require('path');
 
 const app = express()
 app.use(helmet());
-app.set('trust proxy', 1); 
+
 
 connectDB();
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -18,10 +18,15 @@ app.use(expressLayouts)
 app.set('view engine', 'ejs')
 app.set('layout', 'layouts/main')
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('src', path.join(__dirname, 'src'));
-app.set('public', path.join(__dirname, 'public'));
 
+
+if (process.env.NODE_ENV === 'production') {
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('src', path.join(__dirname, 'src'));
+    app.set('public', path.join(__dirname, 'public'));
+    app.set('trust proxy', 1)
+
+}
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -38,10 +43,12 @@ app.use(session({
     }),
     cookie: {
         maxAge: 1000 * 60 * 60 * 24, // 1 day
-        httpOnly: true, 
-        secure: true,
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production' ? true : false,
     }
 }));
+
+
 app.use((req, res, next) => {
     res.locals.user = req.session.user;
     next();
@@ -62,17 +69,17 @@ const documentRoutes = require('./src/routes/document');
 const showRoutes = require('./src/routes/show');
 app.use('/', staticRouter);
 app.use('/auth', authRoutes);
-app.use('/upload',isAuthenticated, documentRoutes);
-app.use('/documents',isAuthenticated, showRoutes);
+app.use('/dashboard/upload', isAuthenticated, documentRoutes);
+app.use('/documents', isAuthenticated, showRoutes);
 
 
 
 
 app.get('/dashboard', isAuthenticated, (req, res) => {
     const userName = req.session.user.name;
-    res.render('dashboard', { title: 'Dashboard',userName, user: req.session.user, layout: 'layouts/main' });
+    res.render('dashboard', { title: 'Dashboard', userName, user: req.session.user, layout: 'layouts/dashboard.ejs' });
 });
 
-app.listen(port,()=>{
-    console.log('Server is running on port: '+port)
+app.listen(port, () => {
+    console.log('Server is running on port: ' + port)
 });

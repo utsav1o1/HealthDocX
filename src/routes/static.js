@@ -9,4 +9,19 @@ router.get('/', (req, res)=>{
     })
 });
 
+
+router.get('/feature', (req, res)=>{
+    res.render('frontpage/feature',{
+        title: 'Features',
+        layout: '../views/layouts/main',
+    })
+});
+
+router.get('/aboutus', (req, res)=>{
+    res.render('frontpage/aboutus',{
+        title: 'About Us',
+        layout: '../views/layouts/main',
+    })
+});
+
 module.exports = router;

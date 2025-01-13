@@ -1,43 +1,77 @@
-<div class="container mt-4">
-    <h2>Welcome, <%= user.username %>!</h2> <!-- Assuming you have user object with username -->
-    <div class="row">
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">Your Medical Documents</div>
-                <div class="card-body">
-                    <p>You can upload your medical documents here.</p>
-                    <a href="/upload" class="btn btn-primary">Upload Document</a>
-                    <a href="/click_photo" class="btn btn-secondary">Click Photo</a>
+<div class="container mt-5">
+    <!-- Welcome Section -->
+    <div class="text-center mb-5">
+        <h1 class="animate__animated animate__fadeInDown">Welcome, <%= user.name %>!</h1>
+        <p class="text-muted animate__animated animate__fadeIn">Manage your health records with ease.</p>
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="row g-4">
+        <!-- Medical Documents -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card shadow-lg animate__animated animate__fadeInLeft">
+                <div class="card-header text-center">
+                    <h5>Your Medical Documents</h5>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">Health Insights</div>
-                <div class="card-body">
-                    <p>Get health insights based on your records.</p>
-                    <a href="/insights" class="btn btn-primary">View Insights</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">Profile Settings</div>
-                <div class="card-body">
-                    <p>Manage your profile and settings.</p>
-                    <a href="/settings" class="btn btn-primary">Go to Settings</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
-                <div class="card-header">View Documents By</div>
                 <div class="card-body text-center">
-                    <a href="/documents/hospitals" class="btn btn-primary">Hospitals</a>
-                    <a href="/documents/issues" class="btn btn-secondary ">Health Issues</a>
+                    <p>Upload and manage your medical documents.</p>
+                    <a href="/upload" class="btn btn-primary btn-sm me-2">Upload Document</a>
+                    <a href="/dashboard/upload/click_photo" class="btn btn-secondary btn-sm">Click Photo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Insights -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card shadow-lg animate__animated animate__fadeInUp">
+                <div class="card-header text-center">
+                    <h5>Health Insights</h5>
+                </div>
+                <div class="card-body text-center">
+                    <p>Get valuable insights from your health records.</p>
+                    <a href="/insights" class="btn btn-primary btn-sm">View Insights</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Settings -->
+        <div class="col-lg-4 col-md-6">
+            <div class="card shadow-lg animate__animated animate__fadeInRight">
+                <div class="card-header text-center">
+                    <h5>Profile Settings</h5>
+                </div>
+                <div class="card-body text-center">
+                    <p>Update your profile and preferences.</p>
+                    <a href="/settings" class="btn btn-primary btn-sm">Go to Settings</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Documents By -->
+        <div class="col-lg-6">
+            <div class="card shadow-lg animate__animated animate__zoomIn">
+                <div class="card-header text-center">
+                    <h5>View Documents By</h5>
+                </div>
+                <div class="card-body text-center">
+                    <p>Your Documents are Organized Here</p>
+                    <a href="/documents/hospitals" class="btn btn-primary btn-sm me-2">Hospitals</a>
+                    <a href="/documents/issues" class="btn btn-secondary btn-sm">Health Issues</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="col-lg-6">
+            <div class="card shadow-lg animate__animated animate__zoomIn">
+                <div class="card-header text-center">
+                    <h5>Health Tips</h5>
+                </div>
+                <div class="card-body text-center">
+                    <p>Stay healthy with our curated tips and advice.</p>
+                    <a href="/health_tips" class="btn btn-primary btn-sm">View Tips</a>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
