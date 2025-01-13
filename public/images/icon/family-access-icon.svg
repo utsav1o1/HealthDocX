@@ -1,0 +1,32 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Family Group at Top -->
+    <!-- Parent 1 (Left) -->
+    <circle cx="60" cy="50" r="18" fill="#4ECDC4"/> <!-- Head -->
+    <path d="M45 80 Q60 95 75 80" stroke="#4ECDC4" stroke-width="16" stroke-linecap="round"/> <!-- Body -->
+    
+    <!-- Child (Middle, Smaller) -->
+    <circle cx="110" cy="60" r="15" fill="#FFD93D"/> <!-- Head -->
+    <path d="M98 85 Q110 95 122 85" stroke="#FFD93D" stroke-width="12" stroke-linecap="round"/> <!-- Body -->
+    
+    <!-- Parent 2 (Right) -->
+    <circle cx="160" cy="50" r="18" fill="#95E1D3"/> <!-- Head -->
+    <path d="M145 80 Q160 95 175 80" stroke="#95E1D3" stroke-width="16" stroke-linecap="round"/> <!-- Body -->
+
+    <!-- Connecting Heart between family -->
+    <path d="M110 40 C100 30 85 30 85 40 C85 50 100 60 110 50 C120 60 135 50 135 40 C135 30 120 30 110 40" 
+          fill="#FF8B8B"/>
+
+    <!-- Main Medical Document Below -->
+    <rect x="65" y="120" width="90" height="110" rx="8" fill="#FF6B6B"/>
+    <rect x="75" y="135" width="70" height="4" fill="white"/>
+    <rect x="75" y="145" width="50" height="4" fill="white"/>
+    <rect x="75" y="155" width="60" height="4" fill="white"/>
+    
+    <!-- Medical Cross on Document -->
+    <path d="M95 180 H125 M110 165 V195" stroke="white" stroke-width="3"/>
+
+    <!-- Connection Lines from Family to Document -->
+    <path d="M60 90 L90 120" stroke="#6C5CE7" stroke-width="2" stroke-dasharray="3 2"/>
+    <path d="M160 90 L130 120" stroke="#6C5CE7" stroke-width="2" stroke-dasharray="3 2"/>
+    <path d="M110 95 L110 120" stroke="#6C5CE7" stroke-width="2" stroke-dasharray="3 2"/>
+</svg>
