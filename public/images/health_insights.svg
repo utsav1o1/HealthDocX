@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M20 140 L180 140" stroke="#E3F2FD" stroke-width="1"/>
+  <path d="M20 100 L180 100" stroke="#E3F2FD" stroke-width="1"/>
+  <path d="M20 60 L180 60" stroke="#E3F2FD" stroke-width="1"/>
+  <path d="M20 20 L180 20" stroke="#E3F2FD" stroke-width="1"/>
+  
+  <!-- Graph Line -->
+  <path d="M40 120 L80 90 L120 100 L160 40" stroke="#2196F3" stroke-width="4" fill="none"/>
+  
+  <!-- Data Points -->
+  <circle cx="40" cy="120" r="6" fill="#90CAF9"/>
+  <circle cx="80" cy="90" r="6" fill="#90CAF9"/>
+  <circle cx="120" cy="100" r="6" fill="#90CAF9"/>
+  <circle cx="160" cy="40" r="6" fill="#90CAF9"/>
+</svg>
