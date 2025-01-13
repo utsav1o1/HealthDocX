@@ -8,7 +8,7 @@
   --light-color: #fff;
 }
 body {
-
+  scrollbar-width: none; 
   background: linear-gradient(90deg, var(--light-color), var(--primary-color));
   margin: 0;
   padding: 0;
@@ -20,6 +20,64 @@ body {
 }
 main {
   flex-grow: 1; 
+}
+
+.custom-bg-primary {
+  background-color: var(--primary-color);
+}
+
+.custom-bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.custom-text {
+  color: var(--text-color);
+}
+
+.team-member-card {
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(145deg, var(--light-color), var(--background-color));
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px);
+}
+
+.mission-section {
+  background:  var(--background-color);
+  color: var(--dark-color);
+}
+.mission-card{
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.mission-card h3{
+  color: var(--light-color);
+}
+.mission-card p{
+  color: var(--light-color);
+}
+
+.card-img-top{
+  mix-blend-mode:darken;
+}
+
+.stats-counter {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.floating-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }
 
 /* Navbar styling */
@@ -38,6 +96,8 @@ main {
 .dock-navbar .container-fluid {
   justify-content: space-between;
 }
+
+
 
 .navbar-brand {
   color: var(--dark-color);

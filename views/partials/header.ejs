@@ -10,10 +10,10 @@
                   <a class="nav-link  <%= title === 'Home' ? 'active' : '' %>" href="/">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link  <%= title === 'Features' ? 'active' : '' %>" href="#features">Features</a>
+                  <a class="nav-link  <%= title === 'Features' ? 'active' : '' %>" href="/feature">Features</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link  <%= title === 'About Us' ? 'active' : '' %>" href="#about">About Us</a>
+                  <a class="nav-link  <%= title === 'About Us' ? 'active' : '' %>" href="/aboutus">About Us</a>
               </li>
               <% if (!user) { %>
                   <li class="nav-item">
@@ -27,7 +27,7 @@
                       <a class="nav-link  <%= title === 'Dashboard' ? 'active' : '' %>" href="/dashboard">Dashboard</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link href="/auth/logout">Logout</a>
+                      <a class="nav-link" href="/auth/logout">Logout</a>
                   </li>
               <% } %>
           </ul>

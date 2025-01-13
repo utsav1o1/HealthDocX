@@ -48,7 +48,7 @@ exports.login = async (req, res) => {
     try {
         const user = await User.findOne({ email }).select('+password');
         if (!user || !(await user.matchPassword(password))) {
-            return res.render('login', { title: 'Log In', error: 'Invalid email or password' });
+            return res.render('auth/login', { title: 'Log In', error: 'Invalid email or password' });
         }
 
         req.session.user = {

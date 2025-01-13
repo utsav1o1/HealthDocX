@@ -6,7 +6,7 @@ const Document = require('../models/Document');
 
 
 router.get('/', (req, res) => {
-    res.render('upload', { title: 'Upload Document', error: null });
+    res.render('upload', { title: 'Upload Document', error: null, layout: 'layouts/dashboard.ejs'});
 });
 
 router.post('/', upload.single('document'), async (req, res) => {
