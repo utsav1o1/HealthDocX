@@ -9,7 +9,7 @@ router.get('/sign_up', (req, res) => {
 
 router.post('/signup', authController.register);
 router.get('/login', (req, res) => {
-    res.render('auth/login', { layout: 'layouts/main', title: 'Log In', error: null });
+    res.render('auth/login', { layout: 'layouts/main', title: 'LogIn', error: null });
 });
 
 router.post('/login', authController.login);
