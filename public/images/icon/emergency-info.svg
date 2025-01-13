@@ -1,0 +1,24 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Emergency Card -->
+    <rect x="40" y="40" width="120" height="120" rx="8" fill="#2196F3"/>
+    
+    <!-- Critical Info Symbols -->
+    <circle cx="70" cy="70" r="15" fill="#E3F2FD"/>
+    <text x="70" cy="75" text-anchor="middle" fill="#2196F3" 
+          font-family="Arial" font-weight="bold" font-size="16">A+</text>
+    
+    <!-- Quick Info Lines -->
+    <rect x="95" y="65" width="50" height="4" rx="2" fill="#E3F2FD"/>
+    <rect x="95" y="75" width="40" height="4" rx="2" fill="#E3F2FD"/>
+    
+    <!-- Alert Symbol -->
+    <path d="M100 100 L60 150 L140 150 Z" fill="#90CAF9"/>
+    <rect x="98" y="110" width="4" height="25" fill="#E3F2FD"/>
+    <circle cx="100" cy="140" r="2" fill="#E3F2FD"/>
+    
+    <!-- Emergency Star -->
+    <g transform="translate(150, 50) scale(0.5)">
+        <path d="M0 -15 L4 -5 L14 -5 L6 2 L9 12 L0 6 L-9 12 L-6 2 L-14 -5 L-4 -5 Z" 
+              fill="#E3F2FD"/>
+    </g>
+</svg>
