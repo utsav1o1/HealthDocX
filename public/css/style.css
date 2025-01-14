@@ -101,6 +101,17 @@ main {
   justify-content: space-between;
 }
 
+.upload-section{
+  background-color: var(--background-color);
+  border-radius: 5px;
+}
+.dropzone{
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--primary-color); 
+  height: 150px;
+}
+
 
 
 .navbar-brand {
